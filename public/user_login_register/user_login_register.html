@@ -11,14 +11,12 @@
     <title>FORMULARIO DE REGISTRO E INICIO DE SESIÓN </title>
 </head>
 <body>
-    <div class="container_form">
+    <div class="container_form register">
         <div class="information">
             <div class="info_childs">
-                <h2>Bienvenido</h2>
-                <p>Bienvenido a Gestium: La plataforma para optimizar 
-                    proyectos, simplificar tareas y organizar equipos 
-                    desde un solo lugar. ¡Transforma tu negocio hoy!</p>
-                    <input type="button" value="Iniciar Sesión">
+                <h2>Bienvenido a GESTIUM</h2>
+                <p>Inicia Sesión en tu Cuenta</p>
+                    <input type="button" value="Iniciar Sesión" id="sign-in">
             </div>
         </div>
         <div class="form_information">
@@ -48,5 +46,41 @@
             </div>
         </div>
     </div>
+
+
+
+
+    <div class="container_form login hide">
+        <div class="information">
+            <div class="info_childs">
+                <h2>¿Nuevo en GESTIUM?</h2>
+                <p>Regístrate y lleva la gestión de tus proyectos al siguiente nivel<div class=""></div></p>
+                    <input type="button" value="Registrarte" id="sign-up">
+            </div>
+        </div>
+        <div class="form_information">
+            <div class="form_infomation_childs">
+                <h2>Iniciar Sesión</h2>
+                <div class="icons">
+                    <i class='bx bxl-google'></i>
+                    <i class='bx bxl-microsoft'></i>
+                    <i class='bx bxl-linkedin-square'></i>
+                </div>
+                <p>o Iniciar Sesión con una cuenta</p>
+                <form class="form">
+                    <label>
+                        <i class='bx bx-envelope' ></i>
+                        <input type="email" placeholder="Correo Electrónico">
+                    </label>
+                    <label>
+                        <i class='bx bx-lock-alt'></i>
+                        <input type="password" placeholder="Contraseña">
+                    </label>
+                    <input type="submit" value="Iniciar Sesión">
+                </form>
+            </div>
+        </div>
+    </div>
+    <script src="user_login_register.js"></script>
 </body>
 </html>

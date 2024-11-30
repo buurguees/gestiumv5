@@ -160,6 +160,11 @@ body{
     transition: ease;
 }
 
+.hide{
+    position: absolute;
+    transform: translateY(-400%);
+}
+
 /* RESPONSIVE FORM*/
 
 @media screen and (max-width:750px){
