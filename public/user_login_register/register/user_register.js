@@ -6,10 +6,10 @@ const alertaError = document.querySelector(".form-register .alerta-error");
 const alertaExito = document.querySelector(".form-register .alerta-exito");
 
 const userNameRegex = /^[a-zA-Z0-9\_\-]{4,16}$/;
-const emailRegex = /^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$/;
-const passwordRegex = /^.{4,12}$/;
+export const emailRegex = /^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$/;
+export const passwordRegex = /^.{4,16}$/;
 
-const estadoValidacionCampos = {
+export const estadoValidacionCampos = {
   userName: false,
   userEmail: false,
   userPassword: false,
@@ -18,7 +18,7 @@ const estadoValidacionCampos = {
 document.addEventListener("DOMContentLoaded", () => {
   formRegister.addEventListener("submit", (e) => {
     e.preventDefault();
-    enviarFormulario();
+    enviarFormulario(formRegister,alertaError,alertaExito);
   });
 
   inputUser.addEventListener("input", () => {
@@ -30,11 +30,11 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
   inputPass.addEventListener("input", () => {
-    validarCampo(passwordRegex,inputPass,"La contraseña tiene que ser de 4 a 12 dígitos");
+    validarCampo(passwordRegex,inputPass,"La contraseña tiene que ser de 4 a 16 dígitos");
   });
 });
 
-function validarCampo(regularExpresion, campo, mensaje) {
+export function validarCampo(regularExpresion, campo, mensaje) {
   const validarCampo= regularExpresion.test(campo.value);
   if (validarCampo) {
     eliminarAlerta(campo.parentElement.parentElement);
@@ -61,16 +61,16 @@ function eliminarAlerta(referencia) {
   if (alerta) alerta.remove();
 }
 
-function enviarFormulario() {
+export function enviarFormulario(form, alertaError,alertaExito) {
   //VALIDAMOS EL ENVIO DE NUESTRO FORMULARIO
 
   if (estadoValidacionCampos.userName && estadoValidacionCampos.userEmail && estadoValidacionCampos.userPassword) {
-    /*ACTUALIZACION DEL CODIGO - RESETEAMOS A FALSE LAS PROPIEDADES DEL OBJETO*/
+    //Se agregó estas 3 líneas de código que evitan un error al mostrar las alertas , lo que hacen es resetear los valores del objeto
     estadoValidacionCampos.userName = false;
     estadoValidacionCampos.userEmail = false;
     estadoValidacionCampos.userPassword = false;
 
-    formRegister.reset();
+    form.reset();
     alertaExito.classList.add("alertaExito");
     alertaError.classList.remove("alertaError");
     setTimeout(() => {
