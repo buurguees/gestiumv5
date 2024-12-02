@@ -165,6 +165,41 @@ body{
     transform: translateY(-400%);
 }
 
+/* PERSONALIZACIÓN DE LAS ALERTAS*/
+
+.form div .alerta {
+    width: 290px;
+    text-align: left;
+    border-radius: 7px;
+    margin-bottom: 10px;
+    font-size: .7rem;
+}
+
+.form > .alerta-error, .form > .alerta-exito{
+    display: none;
+}
+
+.form .alertaError{
+    display: block;
+    background-color: rgba(213,87,59,0.7);
+    padding: .5rem 1rem;
+    margin-top: 10px;
+    font-weight: 500;
+    font-size: .7rem;
+}
+
+.form .alertaExito{
+    display: block;
+    background-color: rgba(198, 236, 174, 0.7);
+    padding: .5rem 1rem;
+    margin-top: 10px;
+    font-weight: 500;
+    font-size: .7rem;
+}
+
+.form .error{
+    outline: solid 2px rgba(213,87,59,0.7);
+}
 /* RESPONSIVE FORM*/
 
 @media screen and (max-width:750px){

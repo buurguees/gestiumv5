@@ -51,6 +51,8 @@
                     </div>
 
                     <input type="submit" value="Registrarte">
+                    <div class="alerta-error">Todos los campos son obligatorios</div>
+                    <div class="alerta-exito">Iniciaste sessión correctamente</div>
                 </form>
             </div>
         </div>
@@ -76,20 +78,31 @@
                     <i class='bx bxl-linkedin-square'></i>
                 </div>
                 <p>o Iniciar Sesión con una cuenta</p>
-                <form class="form">
-                    <label>
-                        <i class='bx bx-envelope' ></i>
-                        <input type="email" placeholder="Correo Electrónico" name="user<userEmail">
-                    </label>
-                    <label>
-                        <i class='bx bx-lock-alt'></i>
-                        <input type="password" placeholder="Contraseña" name="userPassword">
-                    </label>
+                <form class="form form-login" novalidate>
+
+                    <div>
+                        <label>
+                            <i class='bx bx-envelope' ></i>
+                            <input type="email" placeholder="Correo Electrónico" name="userEmail">
+                        </label>
+                    </div>
+                    
+                    <div>
+                       <label>
+                            <i class='bx bx-lock-alt'></i>
+                            <input type="password" placeholder="Contraseña" name="userPassword">
+                        </label> 
+                    </div>
+                    
                     <input type="submit" value="Iniciar Sesión">
+                    <div class="alerta-error">Todos los campos son obligatorios</div>
+                    <div class="alerta-exito">Iniciaste sessión correctamente</div>
                 </form>
             </div>
         </div>
     </div>
     <script src="user_login_register.js"></script>
+    <script src="/public/user_login_register/login/user_login.js"></script>
+    <script src="/public/user_login_register/register/user_register.js"></script>
 </body>
 </html>
